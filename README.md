@@ -15,10 +15,15 @@ composer require shopwwi/laravel-cache
 
 ```
 ## 支持驱动
+
+- apc
+- array
 - file 本地缓存
 - redis 缓存
 - memcached 缓存
 - database 数据库缓存
+- dynamodb
+- octane
 
 ## 缓存使用
 ### 获取缓存实例

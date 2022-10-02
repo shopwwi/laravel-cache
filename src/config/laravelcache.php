@@ -2,6 +2,14 @@
 return [
     'default' => 'file',
     'stores' => [
+        'apc' => [
+            'driver' => 'apc',
+        ],
+
+        'array' => [
+            'driver' => 'array',
+            'serialize' => false,
+        ],
         'file' => [
             'driver' => 'file',
             'path' => runtime_path('cache/data'),
@@ -31,6 +39,17 @@ return [
             'table' => 'cache',
             'connection' => null,
             'lock_connection' => null,
+        ],
+        'dynamodb' => [
+            'driver' => 'dynamodb',
+            'key' => 'AWS_ACCESS_KEY_ID',
+            'secret' => 'AWS_SECRET_ACCESS_KEY',
+            'region' => 'us-east-1',
+            'table' =>'cache',
+            'endpoint' => 'DYNAMODB_ENDPOINT',
+        ],
+        'octane' => [
+            'driver' => 'octane',
         ],
     ],
     'prefix' => 'shopwwi_cache_'
