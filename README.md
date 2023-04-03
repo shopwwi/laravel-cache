@@ -9,6 +9,12 @@ composer require shopwwi/laravel-cache illuminate/cache ^8.0
 ```
 composer require shopwwi/laravel-cache
 ```
+
+- 注意：如果提示你的php版本过高 一般都是由illuminate/cache或者illuminate/filesystem版本过低导致 添加版本安装即可
+```
+composer require shopwwi/laravel-cache illuminate/cache ^10.0 illuminate/filesystem ^10.0
+```
+
 ## 配置文件
 ```
 //路径 config/laravelcache.php
