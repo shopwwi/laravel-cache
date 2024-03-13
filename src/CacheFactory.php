@@ -162,7 +162,7 @@ class CacheFactory{
             $client = $config['client'] ?? 'phpredis';
             $redisConfig = $this->config['stores']['redis'];
             $connection = $redisConfig['connection'] ?? 'default';
-            $reStore = new RedisStore(new RedisManager('', $client, $config),$prefix,$connection);
+            $reStore = new RedisStore(new RedisFactory(),$prefix,$connection);
             $reStore->setLockConnection($redisConfig['lock_connection'] ?? $connection);
         }elseif($store ==='memcached'){
             $config = $this->config['stores']['memcached'];
