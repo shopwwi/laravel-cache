@@ -267,7 +267,7 @@ class CacheFactory{
         $redisConfig = \config('redis');
         $client = $redisConfig['client'] ?? 'phpredis';
 
-        $store = new RedisStore(new RedisManager('', $client, $redisConfig), $this->getPrefix($config), $connection);
+        $store = new RedisStore(new RedisFactory(), $this->getPrefix($config), $connection);
 
         return $this->repository(
             $store->setLockConnection($config['lock_connection'] ?? $connection)
